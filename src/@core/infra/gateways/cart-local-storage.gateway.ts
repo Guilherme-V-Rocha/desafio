@@ -15,7 +15,10 @@ export class CartLocalStorageGateway implements CartGateway {
     localStorage.setItem(this.CART_KEY, JSON.stringify(cart.toJson()));
   }
   get() {
-    const cart = localStorage.getItem(this.CART_KEY);
+    const cart =
+      typeof window !== "undefined"
+        ? localStorage.getItem(this.CART_KEY)
+        : null;
     if (cart) return Cart.create(JSON.parse(cart));
     else return Cart.create();
   }
