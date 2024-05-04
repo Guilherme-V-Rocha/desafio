@@ -1,15 +1,31 @@
-import cartIcon from "@/images/icon/cart.svg"
-import Image from "next/image"
+"use client";
 
-interface ButtonProps {
-    text: string
-    icon?: string
-    onSubmitAction: () => void
+import Image from "next/image";
+import { TypographyProps, Typography } from "../typography/typography.styles";
+import { ButtonWrapper, ButtonWrapperProps } from "./button.styles";
 
-}
-export function Button({...props}: ButtonProps) {
-    return <button onClick={props.onSubmitAction} style={{outline: 0, borderRadius: "8px", border: 0, padding: '14px 27px 13px 15px', backgroundColor: "white"}}>
-            <Image src={cartIcon} alt="a"/>
-            {props.text}
-        </button>
+type ButtonProps = ButtonWrapperProps &
+  TypographyProps & {
+    text?: string;
+    icon?: string;
+    iconWidth?: number;
+    onSubmitAction?: () => void;
+  };
+
+export function Button({
+  text,
+  icon,
+  iconWidth,
+  onSubmitAction,
+  ...props
+}: ButtonProps) {
+  return (
+    <ButtonWrapper
+      onClick={onSubmitAction ? () => onSubmitAction() : () => {}}
+      {...props}
+    >
+      {icon ? <Image src={icon} alt={icon} width={iconWidth} /> : <></>}
+      {text ? <Typography {...props}>{text}</Typography> : <></>}
+    </ButtonWrapper>
+  );
 }
