@@ -57,23 +57,26 @@ export function Sidebar() {
             fontWeight={theme.fontWeight.black}
             fontSize={theme.fontSize.xLarge}
             color={colors.white}
-            textWidth="11.25rem"
+            width="11.25rem"
           >
             Carrinho de compras
           </Typography>
-          <Button
-            icon={closeIcon}
+          <Button.Root
             padding="0.7rem"
             justifyContent="center"
             display="flex"
             backgroundColor={colors.black[900]}
-            fontWeight={theme.fontWeight.bold}
-            fontSize={theme.fontSize.large}
             height="fit-content"
             borderRadius="100%"
-            color={colors.white}
             onSubmitAction={() => onIsOpen(false)}
-          />
+          >
+            <Button.Icon
+              icon={closeIcon}
+              alt="close icon"
+              width={14}
+              height={14}
+            />
+          </Button.Root>
         </SidebarGroup>
         <SidebarScroll>
           {cart.items.map((item) => (
@@ -96,15 +99,20 @@ export function Sidebar() {
             {currencyFormat(cart.total)}
           </Typography>
         </SidebarGroup>
-        <Button
+        <Button.Root
           padding="2.438rem 0 2.688rem 0"
           backgroundColor={colors.black[900]}
-          fontWeight={theme.fontWeight.bold}
-          fontSize={theme.fontSize.xxLarge}
           margin="auto 0 0 0"
-          text="Finalizar Compra"
-          color={colors.white}
-        />
+          onSubmitAction={() => {}}
+        >
+          <Button.Content
+            fontWeight={theme.fontWeight.bold}
+            fontSize={theme.fontSize.xxLarge}
+            color={colors.white}
+          >
+            Finalizar Compra
+          </Button.Content>
+        </Button.Root>
       </motion.div>
     </AnimatePresence>
   )

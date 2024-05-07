@@ -5,8 +5,9 @@ import {
   ShimmerLoadingContainer,
   ShimmerPrice,
   ShimmerTypography,
-} from "./shimmer-loading.styles";
-export const ShimmerLoading = () => {
+} from './shimmer-loading.styles'
+
+export function ShimmerLoading() {
   return (
     <ShimmerLoadingContainer>
       <ShimmerImg />
@@ -17,5 +18,5 @@ export const ShimmerLoading = () => {
       <ShimmerTypography />
       <ShimmerButton />
     </ShimmerLoadingContainer>
-  );
-};
+  )
+}

@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import { colors } from "@/styles/colors";
-import { Typography } from "@/components/typography";
-import { HeaderContainer, HeaderGroup } from "./header.styles";
-import { Button } from "@/components/button";
-import cartIcon from "@/images/cartIcon.svg";
-import { useSidebar } from "@/contexts/sidebar.context";
-import { useListProducts } from "@/contexts/cart.context";
-import { theme } from "@/styles/theme";
+import { Button } from '@/components/button'
+import { Typography } from '@/components/typography'
+import { useListProducts } from '@/contexts/cart.context'
+import { useSidebar } from '@/contexts/sidebar.context'
+import cartIcon from '@/images/cartIcon.svg'
+import { colors } from '@/styles/colors'
+import { theme } from '@/styles/theme'
+import { HeaderContainer, HeaderGroup } from './header.styles'
 
 export function Header() {
-  const { onIsOpen } = useSidebar();
-  const { cart } = useListProducts();
+  const { onIsOpen } = useSidebar()
+  const { cart } = useListProducts()
 
   return (
     <HeaderContainer>
@@ -28,24 +28,28 @@ export function Header() {
           fontSize={theme.fontSize.medium}
           color={colors.white}
           alignSelf="end"
-          textMargin="0 0 0.5rem 0.5rem"
+          margin="0 0 0.5rem 0.5rem"
         >
           Sistemas
         </Typography>
       </HeaderGroup>
-      <Button
-        text={cart.items.length.toString()}
-        icon={cartIcon}
+      <Button.Root
         backgroundColor={colors.white}
         padding="0.875rem 1.688rem 0.813rem 0.938rem"
         borderRadius="0.5rem"
-        fontWeight={theme.fontWeight.bold}
-        fontSize={theme.fontSize.medium}
-        alignSelf="flex-start"
         display="flex"
-        textMargin="0 0 0 1rem"
         onSubmitAction={() => onIsOpen(true)}
-      />
+      >
+        <Button.Icon icon={cartIcon} alt="cart icon" width={19} height={18} />
+        <Button.Content
+          fontWeight={theme.fontWeight.bold}
+          fontSize={theme.fontSize.medium}
+          alignSelf="flex-start"
+          margin="0 0 0 1rem"
+        >
+          {cart.items.length.toString()}
+        </Button.Content>
+      </Button.Root>
     </HeaderContainer>
-  );
+  )
 }

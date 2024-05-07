@@ -1,30 +1,30 @@
+import { CartItem } from '@/@core/domain/entities/cart/cartItem'
+import { Button } from '@/components/button'
+import { Typography } from '@/components/typography'
+import { useListProducts } from '@/contexts'
+import closeIcon from '@/images/closeIcon.svg'
+import { colors } from '@/styles/colors'
+import { theme } from '@/styles/theme'
+import { currencyFormat } from '@/util/currency-format'
 import {
+  ProductCardClose,
   ProductCardContainer,
   ProductCardGroup,
   ProductCardImg,
   ProductCardPrice,
   ProductCardQuantity,
-  ProductCardClose,
   ProductCardTypography,
-} from "./product-card.styles";
-import { Typography } from "@/components/typography";
-import { ProductQuantity } from "./product-quantity";
-import { Button } from "@/components/button";
-import { useListProducts } from "@/contexts";
-import { theme } from "@/styles/theme";
-import { colors } from "@/styles/colors";
-import closeIcon from "@/images/closeIcon.svg";
-import { currencyFormat } from "@/util/currency-format";
-import { CartItem } from "@/@core/domain/entities/cart/cartItem";
+} from './product-card.styles'
+import { ProductQuantity } from './product-quantity'
 
 type ProductCardProps = {
-  item: CartItem;
-};
+  item: CartItem
+}
 
 export function ProductCard({ item }: ProductCardProps) {
-  const { remove } = useListProducts();
-  const mediaQuery = innerWidth <= 375;
-  const product = item.product;
+  const { remove } = useListProducts()
+  const mediaQuery = innerWidth <= 375
+  const product = item.product
 
   return (
     <ProductCardContainer>
@@ -52,18 +52,15 @@ export function ProductCard({ item }: ProductCardProps) {
         </ProductCardPrice>
       </ProductCardGroup>
       <ProductCardClose>
-        <Button
-          icon={closeIcon}
+        <Button.Root
           padding="0.156rem 0.313rem 0.156rem 0.313rem"
           borderRadius="100%"
           backgroundColor={colors.black[900]}
-          fontWeight={theme.fontWeight.regular}
-          fontSize={theme.fontSize.xxxSmall}
-          color={colors.white}
-          iconWidth={9}
           onSubmitAction={() => remove(product.id)}
-        />
+        >
+          <Button.Icon icon={closeIcon} alt="close icon" width={9} height={9} />
+        </Button.Root>
       </ProductCardClose>
     </ProductCardContainer>
-  );
+  )
 }

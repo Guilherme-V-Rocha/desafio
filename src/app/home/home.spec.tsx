@@ -1,8 +1,13 @@
 import { Home } from '@/app/home'
+import Provider from '@/util/providers'
 import { render } from '@testing-library/react'
 
 describe('.', () => {
-  const {} = render(<Home />)
+  const view = render(
+    <Provider>
+      <Home />
+    </Provider>
+  )
 
   it('.', () => {})
 })
