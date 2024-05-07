@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.2",
@@ -23,6 +24,7 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@tanstack/eslint-plugin-query": "^5.28.11",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.6",

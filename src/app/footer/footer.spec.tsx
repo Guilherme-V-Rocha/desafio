@@ -20,11 +20,13 @@ describe('Footer', () => {
       </Provider>
     )
 
-    expect(screen.getByText('')).toBeInTheDocument()
+    expect(
+      screen.getByText('MKS sistemas © Todos os direitos reservados')
+    ).toBeInTheDocument()
   })
 
   it('should validate the typograph', () => {
-    const view = render(
+    render(
       <Provider>
         <Footer />
       </Provider>

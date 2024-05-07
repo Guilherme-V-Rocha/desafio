@@ -9,13 +9,21 @@ import { colors } from '@/styles/colors'
 import { theme } from '@/styles/theme'
 import { HeaderContainer, HeaderGroup } from './header.styles'
 
-export function Header() {
-  const { onIsOpen } = useSidebar()
-  const { cart } = useListProducts()
+type HeaderProps = {
+  useSidebarHook?: () => ReturnType<typeof useSidebar>
+  useListProductsHook?: () => ReturnType<typeof useListProducts>
+}
+
+export function Header({
+  useSidebarHook = useSidebar,
+  useListProductsHook = useListProducts,
+}: HeaderProps) {
+  const { onIsOpen } = useSidebarHook()
+  const { cart } = useListProductsHook()
 
   return (
     <HeaderContainer>
-      <HeaderGroup>
+      <HeaderGroup data-testid="header-group">
         <Typography
           fontWeight={theme.fontWeight.semiBold}
           fontSize={theme.fontSize.xxxLarge}
