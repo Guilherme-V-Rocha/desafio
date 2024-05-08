@@ -19,6 +19,7 @@ interface ListProductProps {
 export function ListProducts({ product }: ListProductProps) {
   const { addToCart } = useListProducts()
   const productsEntity = new Product(product)
+
   return (
     <ProductCard>
       <ProductImg src={product.photo} alt={product.name} />

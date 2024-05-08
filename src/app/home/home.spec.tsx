@@ -22,4 +22,12 @@ describe('Home', () => {
 
     expect(view).toMatchSnapshot()
   })
+
+  it('should validate list products', () => {
+    render(
+      <Provider>
+        <Home />
+      </Provider>
+    )
+  })
 })
