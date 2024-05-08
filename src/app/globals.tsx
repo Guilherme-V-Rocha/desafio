@@ -1,5 +1,5 @@
-"use client";
-import { createGlobalStyle } from "styled-components";
+'use client'
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -20,11 +20,11 @@ body {
   display: flex;
   position: relative;
   flex-direction: column;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 485px) {
     max-width: 100%;
   }
 }
 
 
 
-`;
+`

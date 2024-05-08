@@ -10,7 +10,7 @@ export const HomeContainer = styled.div`
   justify-content: center;
   margin: 7.25rem 15.938rem 8.813rem 15.438rem;
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 485px) {
     margin: 1.125rem 3.875rem 0 3.875rem;
   }
 `

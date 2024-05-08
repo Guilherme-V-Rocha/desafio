@@ -42,7 +42,6 @@ const ListProductsProvider = ({ children }: { children: React.ReactNode }) => {
       return prev
     })
   }
-  console.log(cart)
 
   const decreaseCartItem = (id: number) =>
     setCart((prev) => {

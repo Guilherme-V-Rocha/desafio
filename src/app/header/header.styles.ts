@@ -9,9 +9,8 @@ export const HeaderContainer = styled.header`
   padding: 1.75rem 5.5rem 1.813rem 4.063rem;
   position: sticky;
   top: 0;
-  column-gap: 1rem;
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 485px) {
     padding: 1.75rem 1.438rem 1.813rem 1.25rem;
   }
 `

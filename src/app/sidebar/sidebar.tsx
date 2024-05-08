@@ -6,9 +6,9 @@ import closeIcon from '@/images/closeIcon.svg'
 import { colors } from '@/styles/colors'
 import { theme } from '@/styles/theme'
 import { currencyFormat } from '@/util/currency-format'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { ProductCard } from './product-card'
-import { SidebarGroup, SidebarScroll } from './sidebar.styles'
+import { SidebarGroup, SidebarNav, SidebarScroll } from './sidebar.styles'
 
 export function Sidebar() {
   const { isOpen, onIsOpen } = useSidebar()
@@ -35,21 +35,10 @@ export function Sidebar() {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <SidebarNav
+        key={'id'}
         initial={false}
         animate={isOpen ? 'open' : 'closed'}
-        style={{
-          x: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          boxShadow: '0 0 20px rgba(0, 0, 0, 0.14)',
-          backgroundColor: colors.blue[600],
-          position: 'fixed',
-          width: '30.375rem',
-          height: '100vh',
-          right: 0,
-          padding: '2.25rem 0 0 0',
-        }}
         variants={variants}
       >
         <SidebarGroup padding="0 1.375rem 0 2.938rem" margin="0 0 3.938rem 0">
@@ -113,7 +102,7 @@ export function Sidebar() {
             Finalizar Compra
           </Button.Content>
         </Button.Root>
-      </motion.div>
+      </SidebarNav>
     </AnimatePresence>
   )
 }
