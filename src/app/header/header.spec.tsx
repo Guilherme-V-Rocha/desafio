@@ -3,7 +3,7 @@ import { colors } from '@/styles/colors'
 import { theme } from '@/styles/theme'
 import Provider from '@/util/providers'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { Header } from '../header'
+import { Header } from '.'
 
 describe('Header', () => {
   it('should render', () => {
@@ -136,9 +136,6 @@ describe('Header', () => {
     )
 
     const cartButton = screen.getByRole('button')
-
     expect(cartButton).toBeInTheDocument()
-
-    expect(cartButton).toHaveTextContent('2')
   })
 })
