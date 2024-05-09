@@ -20,7 +20,7 @@ export const ShimmerLoadingContainer = styled.div`
   border-radius: 0.5rem;
   box-sizing: border-box;
   padding-top: 1.125rem;
-  height: auto;
+  height: 22.875rem;
   width: 15.598rem;
 `
 
