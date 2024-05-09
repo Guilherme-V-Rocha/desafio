@@ -27,7 +27,7 @@ describe('Header', () => {
     expect(screen.getByText(/Sistemas/i)).toBeInTheDocument()
   })
 
-  it('shoudl validate the typography MKS style', () => {
+  it('should validate the typography MKS style', () => {
     render(
       <Provider>
         <Header />
@@ -43,7 +43,7 @@ describe('Header', () => {
     })
   })
 
-  it('shoudl validate the typography Sistemas style', () => {
+  it('should validate the typography Sistemas style', () => {
     render(
       <Provider>
         <Header />

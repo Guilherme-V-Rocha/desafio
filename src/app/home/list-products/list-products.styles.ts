@@ -11,7 +11,6 @@ export const ProductCard = styled.div`
   border-radius: 0.5rem;
   box-sizing: border-box;
   padding-top: 1.125rem;
-  /* height: 22.875rem; */
   width: 15.598rem;
   max-height: 22.875rem;
   height: 100%;

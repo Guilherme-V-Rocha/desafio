@@ -22,9 +22,14 @@ export function ListProducts({ product }: ListProductProps) {
 
   return (
     <ProductCard>
-      <ProductImg src={product.photo} alt={product.name} />
-      <ProductGroup>
+      <ProductImg
+        data-testid="product-photo"
+        src={product.photo}
+        alt={product.name}
+      />
+      <ProductGroup data-testid="product-group">
         <Typography
+          data-testid={`product-name`}
           fontWeight={theme.fontWeight.regular}
           fontSize={theme.fontSize.regular}
         >
@@ -41,6 +46,7 @@ export function ListProducts({ product }: ListProductProps) {
         </ProductPrice>
       </ProductGroup>
       <Typography
+        data-testid="product-description"
         fontWeight={theme.fontWeight.light}
         fontSize={theme.fontSize.tinySmall}
         margin="0 0.875rem 0 0.875rem"
@@ -59,6 +65,7 @@ export function ListProducts({ product }: ListProductProps) {
         onSubmitAction={() => addToCart(productsEntity)}
       >
         <Button.Icon
+          data-testid="button-icon"
           icon={shoppingBagIcon}
           alt="shopping bag icon"
           width={14}
