@@ -3,9 +3,9 @@ import { faker } from '@faker-js/faker'
 
 export const productFaker = new Product({
   id: faker.number.int(),
-  brand: faker.commerce.product.name,
-  description: faker.commerce.productDescription.name,
-  name: faker.commerce.productName.name,
+  brand: faker.commerce.product(),
+  description: faker.commerce.productDescription(),
+  name: faker.commerce.productName(),
   photo: faker.image.urlPicsumPhotos(),
   price: faker.commerce.price(),
   updatedAt: faker.date.recent(),
