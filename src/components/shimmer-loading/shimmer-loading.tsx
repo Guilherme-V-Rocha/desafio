@@ -15,7 +15,7 @@ export function ShimmerLoading() {
         <ShimmerTypography width="100%" />
         <ShimmerPrice />
       </ShimmerGroup>
-      <ShimmerTypography />
+      <ShimmerTypography margin="0 0.875rem 0 0.875rem" />
       <ShimmerButton />
     </ShimmerLoadingContainer>
   )
