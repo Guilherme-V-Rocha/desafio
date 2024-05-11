@@ -11,7 +11,7 @@ export default function makeUseProducts(props?: {
 
   const mock = {
     data: data,
-    isLoading: false,
+    isLoading,
     ...props,
   }
 
