@@ -134,8 +134,9 @@ describe('Header', () => {
         />
       </Provider>
     )
-
+    const count: number = cartContext().cart.items.length
     const cartButton = screen.getByRole('button')
     expect(cartButton).toBeInTheDocument()
+    expect(cartButton).toHaveTextContent(count.toString())
   })
 })
